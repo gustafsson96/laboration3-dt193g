@@ -8,10 +8,11 @@
                 <th>Genre</th>
                 <th>Längd</th>
                 <th>Tittad på</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <FilmRow v-for="movie in movies" :key="movie.id" :movie="movie" />
+            <FilmRow v-for="movie in movies" :key="movie.id" :movie="movie" @delete-movie="deleteMovie" />
         </tbody>
     </table>
 
@@ -28,7 +29,7 @@ const movies = ref([])
 
 onMounted(() => {
     getMovies();
-})
+});
 
 const getMovies = async () => {
     try {
@@ -41,7 +42,22 @@ const getMovies = async () => {
         }
     }
     catch (error) {
+        console.log("Error: " + error);
+    }
+}
 
+const deleteMovie = async (id) => {
+    try {
+        const res = await fetch("https://laboration2-2-dt193g.onrender.com/movies/" + id, {
+            method: "DELETE"
+        });
+
+        if (res.ok) {
+            getMovies();
+        }
+    }
+    catch (error) {
+        console.log("Error: " + error);
     }
 }
 

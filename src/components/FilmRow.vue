@@ -5,6 +5,7 @@
         <td> {{movie.genre}}</td>
         <td> {{movie.length}}</td>
         <td> {{movie.watched}}</td>
+        <td><button @click="$emit('deleteMovie', movie.id)" >Ta bort</button></td>
     </tr>
 </template>
 
@@ -12,6 +13,8 @@
 const props = defineProps({
     movie: Object
 })
+
+const emits = defineEmits(["deleteMovie"]);
 </script>
 
 <style scoped></style>
