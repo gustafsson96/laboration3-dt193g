@@ -1,5 +1,6 @@
 <template>
     <h1>Filmsidan!</h1>
+    <AddMovie @refresh-table="getMovies" />
     <table>
         <thead>
             <tr>
@@ -24,6 +25,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import FilmRow from '@/components/FilmRow.vue';
+import AddMovie from '@/components/AddMovie.vue';
 
 const movies = ref([])
 
