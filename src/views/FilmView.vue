@@ -1,6 +1,6 @@
 <template>
     <main>
-        <h1>Filmsidan!</h1>
+        <h1>Filmsidan</h1>
         <AddMovie @refresh-table="getMovies" />
         <table>
             <thead>
@@ -9,7 +9,7 @@
                     <th>År</th>
                     <th>Genre</th>
                     <th>Längd</th>
-                    <th>Tittad på</th>
+                    <th>Sedd av Julia</th>
                     <th></th>
                 </tr>
             </thead>
@@ -17,10 +17,6 @@
                 <FilmRow v-for="movie in movies" :key="movie.id" :movie="movie" @delete-movie="deleteMovie" />
             </tbody>
         </table>
-
-        <!--
-     Undersida som konsumerar extern webbtjänst skapad i tidigare labb, förslagsvis till en tabell. 
-     Här ska det gå att radera data och finnas forumlär för att lägga till data. -->
     </main>
 </template>
 

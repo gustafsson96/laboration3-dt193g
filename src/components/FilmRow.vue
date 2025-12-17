@@ -4,7 +4,7 @@
         <td> {{ movie.year }}</td>
         <td> {{movie.genre}}</td>
         <td> {{movie.length}}</td>
-        <td> {{movie.watched}}</td>
+        <td> {{movie.watched ? 'Ja' : 'Nej' }}</td>
         <td><button @click="$emit('deleteMovie', movie.id)" >Ta bort</button></td>
     </tr>
 </template>
