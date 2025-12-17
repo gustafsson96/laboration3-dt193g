@@ -78,7 +78,6 @@ const addMovie = async () => {
     }
 }
 
-
 </script>
 
 <style scoped>
