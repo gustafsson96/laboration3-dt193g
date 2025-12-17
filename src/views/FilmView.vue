@@ -1,25 +1,27 @@
 <template>
-    <h1>Filmsidan!</h1>
-    <AddMovie @refresh-table="getMovies" />
-    <table>
-        <thead>
-            <tr>
-                <th>Titel</th>
-                <th>År</th>
-                <th>Genre</th>
-                <th>Längd</th>
-                <th>Tittad på</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <FilmRow v-for="movie in movies" :key="movie.id" :movie="movie" @delete-movie="deleteMovie" />
-        </tbody>
-    </table>
+    <main>
+        <h1>Filmsidan!</h1>
+        <AddMovie @refresh-table="getMovies" />
+        <table>
+            <thead>
+                <tr>
+                    <th>Titel</th>
+                    <th>År</th>
+                    <th>Genre</th>
+                    <th>Längd</th>
+                    <th>Tittad på</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <FilmRow v-for="movie in movies" :key="movie.id" :movie="movie" @delete-movie="deleteMovie" />
+            </tbody>
+        </table>
 
-    <!--
+        <!--
      Undersida som konsumerar extern webbtjänst skapad i tidigare labb, förslagsvis till en tabell. 
      Här ska det gå att radera data och finnas forumlär för att lägga till data. -->
+    </main>
 </template>
 
 <script setup>
