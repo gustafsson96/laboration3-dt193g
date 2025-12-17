@@ -30,8 +30,14 @@ div {
 
 p {
     margin: 0.8em 0;
-    font-size: 1.1em;
+    font-size: 1em;
     font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    p {
+        font-size: 0.9em;
+    }
 }
 
 </style>

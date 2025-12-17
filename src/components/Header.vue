@@ -40,7 +40,6 @@ function closeMenu() {
 </script>
 
 <style scoped>
-
 nav {
     position: relative;
     z-index: 10;
@@ -67,13 +66,12 @@ a {
     text-decoration: none;
     color: #fff;
     padding: 0.3em 0.5em;
-    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 a:hover {
-    background-color: rgba(255,255,255,0.15);
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.15);
+
 }
 
 .active-link {
@@ -99,16 +97,15 @@ a:hover {
     border-radius: 2px;
 }
 
-
 @media screen and (max-width: 768px) {
 
     .hamburger-icon {
         display: flex;
         margin: 0.2em;
+        z-index: 10;
     }
 
     .bar {
-        display: flex;
         transition: transform 0.3s ease, opacity 0.2s ease;
     }
 
@@ -118,8 +115,7 @@ a:hover {
 
     /* Styling for when navbar is open */
     ul.open {
-        display: flex;
-        flex-direction: column;
+        display: block;
         position: absolute;
         top: 100%;
         left: 0;
@@ -130,6 +126,13 @@ a:hover {
         padding: 1.5em;
     }
 
+    ul.open li {
+        display: flex;
+        margin-bottom: 1em;
+        flex-direction: column;
+        text-align: center;
+    }
+
     /* Rotate hamburger bars into cross when navbar is opened */
     .hamburger-icon.open span:nth-child(1) {
         transform: rotate(45deg) translate(4px, 4px);
@@ -137,7 +140,6 @@ a:hover {
 
     .hamburger-icon.open span:nth-child(2) {
         opacity: 0;
-
     }
 
     .hamburger-icon.open span:nth-child(3) {
