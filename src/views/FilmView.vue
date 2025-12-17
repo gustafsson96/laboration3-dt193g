@@ -4,8 +4,10 @@
         <div class="image-container">
             <img src="../assets/images/characters.webp" alt="animerade filmkaraktärer">
         </div>
+        <!-- Form component to add new movie -->
         <AddMovie @refresh-table="getMovies" />
         <div class="table-container">
+            <!-- Movie table -->
             <table>
                 <thead>
                     <tr>
@@ -30,12 +32,15 @@ import { ref, onMounted } from 'vue';
 import FilmRow from '@/components/FilmRow.vue';
 import AddMovie from '@/components/AddMovie.vue';
 
+// Reactive array to store movies fetched from the API
 const movies = ref([])
 
+// onMounted to run getMovie function when the component loads
 onMounted(() => {
     getMovies();
 });
 
+// Get all movies from the API
 const getMovies = async () => {
     try {
         const res = await fetch("https://laboration2-2-dt193g.onrender.com/movies");
@@ -46,11 +51,13 @@ const getMovies = async () => {
             movies.value = data;
         }
     }
+    // Catchh errors
     catch (error) {
         console.log("Error: " + error);
     }
 }
 
+// Delete a movie by id
 const deleteMovie = async (id) => {
     try {
         const res = await fetch("https://laboration2-2-dt193g.onrender.com/movies/" + id, {
@@ -61,6 +68,7 @@ const deleteMovie = async (id) => {
             getMovies();
         }
     }
+    // Catch errors
     catch (error) {
         console.log("Error: " + error);
     }
