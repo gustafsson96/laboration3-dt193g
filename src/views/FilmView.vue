@@ -1,7 +1,7 @@
 <template>
     <main>
         <h1>Filmsidan</h1>
-        <AddMovie @refresh-table="getMovies" />
+            <AddMovie @refresh-table="getMovies" />
         <table>
             <thead>
                 <tr>
@@ -64,7 +64,6 @@ const deleteMovie = async (id) => {
 </script>
 
 <style scoped>
-
 img {
     width: 60%;
     height: auto;
@@ -75,5 +74,4 @@ img {
         width: 80%;
     }
 }
-
 </style>
