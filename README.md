@@ -6,7 +6,7 @@ Denna laboration utgörs av ett Vue-projekt där användaren kan visa, lägga ti
 <br><br>
 Webbplatsen innehåller: 
 
-* En startsida med kort information om webbplatsen. 
+* En startsida med kortfattad information om webbplatsen. 
 * En filmsida med ett formulär för att lägga till nya filmer och en tabell som listar redan tillagda filmer. 
 * Knappar för att ta bort en film från tabellen. 
 * Responsiv design. 
@@ -16,18 +16,18 @@ Webbplatsen innehåller:
 * Lista filmer med titel, år, genre, längd och om filmen är sedd. 
 * Lägga till nya filmer med validering och felmeddelanden. 
 * Ta bort filmer baserat på id med en DeleteButton-komponent. 
-* Responsiv design som inkluderar en hamburgermeny för skrämar mindre än 768px. 
+* Responsiv design som inkluderar en hamburgermeny för skärmar mindre än 768px. 
 
 ## Vue-specifika funktioner
 * Props: Används för att skicka data från föräldern till barnkomponenten:
     * Definieras i FilmRow.vue för att skicka ett movie-objekt till FilmView.vue.
 * Emits: Används för att skicka events från barnkomponent till förälder enligt följande: 
     * refreshTable - används från AddMovie.vue till FilmView.vue för att uppdatera tabellen. 
-    * click - används från DeleteButton.vue till FilmRow.vue för att signalera att knappen klickats
+    * click - används från DeleteButton.vue till FilmRow.vue för att signalera att knappen klickats.
     * deleteMovie - används från FilmRow.vue till FilmView.vue för att ta bort en film baserat på id. 
-* v-model: För two-way binding mellan formulär input och variabler i AddMovies.vue. 
+* v-model: För two-way binding mellan formulär-input och variabler i AddMovies.vue. 
 * Scoped CSS: Komponentspecifik styling. 
-* Vue Router: Hanterar navigering mellan HomeView.vue, FilmView.vue och InfoView.vue med RouterLink i huvudmenyn.
+* Vue Router: Hanterar navigering mellan HomeView.vue, FilmView.vue och InfoView.vue med RouterLinks i huvudmenyn.
 * Reactive State: Används för status på huvudmenyn, i filmlistan och för felmeddelanden i formuläret så att ändringar uppdateras automatiskt i gränssnittet.
 * Lifecycle Hooks: onMounted() används för att hämta data från API:et via getMovies() när komponenten FilmView.vue renderas.
 
