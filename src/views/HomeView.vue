@@ -6,10 +6,11 @@
             </div>
             <picture>
                 <source srcset="../assets/images/hero-image-sm.webp" media="(max-width: 768px)">
-                <img src="../assets/images/hero-image.webp" alt="Blond kvinna i en biosalong">
+                <img src="../assets/images/hero-image.webp" alt="Blond kvinna i en biosalong" id="hero-img">
             </picture>
         </div>
-        <div class="info-box">
+        <div class="welcome-container">
+            <div class="welcome-text">
             <h2>Välkommen hit!</h2>
             <p>Med ett relativt nyfunnet intresse för film är jag nu i processen att hitta mina favoriter, samtidigt som
                 jag jobbar på att bocka av en del klassiker. När det kommer till genre föredrar jag romantiska
@@ -20,6 +21,8 @@
                 eller som jag vill se inom en snar framtid. Den fylls på kontinuerligt.</p>
             <p>Har du ett förslag på en film
                 jag borde se? Lägg till den i listan!</p>
+                            </div>
+                            <img src="../assets/images/welcome.webp" alt="animerad man med öppna armar" id="welcome-img">
         </div>
     </main>
 </template>
@@ -31,12 +34,14 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <style scoped>
-main {
-    background-color: rgba(204, 230, 255, 0.7);
-}
 
 .hero-container {
     position: relative;
+}
+
+#hero-img {
+    width: 100%;
+    height: auto;
 }
 
 .hero-text {
@@ -51,23 +56,35 @@ main {
     color: #fff;
 }
 
-img {
-    width: 100%;
+.welcome-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2em;
+}
+
+#welcome-img {
+    width: 40%;
     height: auto;
 }
 
-.info-box {
+.welcome-text {
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.9);
     padding: 1.5em 2em;
-    margin: 3em auto;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    text-align: left;
 }
 
 @media screen and (max-width: 1000px) {
     .hero-text {
         font-size: 1.3em;
+    }
+
+    .welcome-container {
+        margin: 1em;
     }
 }
 
@@ -76,10 +93,17 @@ img {
         font-size: 1.2em;
     }
 
-    .info-box {
-        padding: 1.5em;
-        margin: 3em auto;
-        border-radius: 0;
+    .welcome-container {
+        flex-direction: column;
+        margin: 0.5em;
+    }
+
+    .welcome-text {
+        padding: 0.5em;
+    }
+
+    #welcome-img {
+        width: 70%;
     }
 }
 </style>
