@@ -46,9 +46,26 @@ const emit = defineEmits(["refreshTable"]);
 
 // Send movie to API
 const addMovie = async () => {
-    // Input validation
+    const currentYear = new Date().getFullYear();
+
+    // Input validation - check for empty fields
     if (!newMovie.value.title || !newMovie.value.year || !newMovie.value.genre || !newMovie.value.length) {
         error.value = "Fälten får inte vara tomma";
+        return;
+    }
+
+    // Input validation - check that year and length are numbers
+    const yearNum = parseInt(newMovie.value.year);
+    const lengthNum = parseInt(newMovie.value.length);
+
+    if (isNaN(yearNum) || isNaN(lengthNum)) {
+        error.value = "År och längd måste vara siffror";
+        return;
+    }
+
+    // Input validation - check that year is between 1888 and current year (based on API validation)
+    if (yearNum < 1888 || yearNum > currentYear) {
+        error.value = `År måste vara mellan 1888 och ${currentYear}`;
         return;
     }
 
