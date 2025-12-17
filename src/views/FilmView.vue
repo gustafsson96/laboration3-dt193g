@@ -71,7 +71,7 @@ const deleteMovie = async (id) => {
 .image-container {
     display: flex;
     justify-content: center;
-    margin: 2em 0 3em;
+    margin: 2em 0;
 }
 
 img {
