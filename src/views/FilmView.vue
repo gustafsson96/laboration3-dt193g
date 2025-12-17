@@ -5,21 +5,23 @@
             <img src="../assets/images/characters.webp" alt="animerade filmkaraktärer">
         </div>
         <AddMovie @refresh-table="getMovies" />
-        <table>
-            <thead>
-                <tr>
-                    <th>Titel</th>
-                    <th>År</th>
-                    <th>Genre</th>
-                    <th>Längd</th>
-                    <th>Sedd av Julia</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <FilmRow v-for="movie in movies" :key="movie.id" :movie="movie" @delete-movie="deleteMovie" />
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titel</th>
+                        <th>År</th>
+                        <th>Genre</th>
+                        <th>Längd</th>
+                        <th>Sedd</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <FilmRow v-for="movie in movies" :key="movie.id" :movie="movie" @delete-movie="deleteMovie" />
+                </tbody>
+            </table>
+        </div>
     </main>
 </template>
 
@@ -67,7 +69,6 @@ const deleteMovie = async (id) => {
 </script>
 
 <style scoped>
-
 .image-container {
     display: flex;
     justify-content: center;
@@ -79,9 +80,39 @@ img {
     height: auto;
 }
 
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 90%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #d3d3d3;
+    overflow: scroll;
+}
+
+th {
+    background: #223a6d;
+    color: white;
+    padding: 1em;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
 @media screen and (max-width: 768px) {
     img {
         width: 80%;
+    }
+
+    th {
+        padding: 0.8em;
+        font-size: 0.9em;
     }
 }
 </style>

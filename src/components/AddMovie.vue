@@ -16,7 +16,7 @@
 
         <div class="checkbox-row">
             <input type="checkbox" name="watched" id="watched" v-model="newMovie.watched">
-            <label for="watched">Sedd av Julia</label>
+            <label for="watched">Sedd</label>
         </div>
 
         <input type="submit" value="Lägg till">
