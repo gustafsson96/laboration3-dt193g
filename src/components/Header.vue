@@ -1,11 +1,11 @@
 <template>
     <header>
         <nav>
-            <button class="hamburger-icon" @click="toggleMenu" :class="{ open: menuOpen }" aria-label="toggle menu">
+            <div class="hamburger-icon" @click="toggleMenu" :class="{ open: menuOpen }" aria-label="toggle menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </button>
+            </div>
             <ul :class="{ open: menuOpen }">
                 <li>
                     <RouterLink to="/" @click="closeMenu" active-class="active-link">Hem</RouterLink>
@@ -71,7 +71,6 @@ a {
 
 a:hover {
     background-color: rgba(255, 255, 255, 0.15);
-
 }
 
 .active-link {
@@ -83,18 +82,12 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
     border: none;
-    background: none;
-    height: 15px;
-    width: 30px;
+    background-color: transparent;
+    height: 18px;
+    width: 25px;
     cursor: pointer;
     margin: 0 0 0 1em;
-}
-
-.bar {
-    display: block;
-    height: 2px;
-    background-color: #fff;
-    border-radius: 2px;
+    z-index: 100;
 }
 
 @media screen and (max-width: 768px) {
@@ -102,10 +95,14 @@ a:hover {
     .hamburger-icon {
         display: flex;
         margin: 0.2em;
-        z-index: 10;
     }
 
     .bar {
+        display: flex;
+        height: 3px;
+        background-color: #fff;
+        color: white;
+        border-radius: 2px;
         transition: transform 0.3s ease, opacity 0.2s ease;
     }
 
@@ -135,7 +132,7 @@ a:hover {
 
     /* Rotate hamburger bars into cross when navbar is opened */
     .hamburger-icon.open span:nth-child(1) {
-        transform: rotate(45deg) translate(4px, 4px);
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
     .hamburger-icon.open span:nth-child(2) {
@@ -143,7 +140,7 @@ a:hover {
     }
 
     .hamburger-icon.open span:nth-child(3) {
-        transform: rotate(-45deg) translate(4px, -4px);
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 </style>
