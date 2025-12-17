@@ -30,7 +30,11 @@ import { RouterLink } from 'vue-router';
 
 </script>
 
-<style>
+<style scoped>
+main {
+    background-color: rgba(204, 230, 255, 0.7);
+}
+
 .hero-container {
     position: relative;
 }

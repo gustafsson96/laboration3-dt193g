@@ -67,4 +67,17 @@ const deleteMovie = async (id) => {
 
 </script>
 
-<style></style>
+<style scoped>
+
+img {
+    width: 60%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        width: 80%;
+    }
+}
+
+</style>
