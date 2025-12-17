@@ -82,7 +82,6 @@ const addMovie = async () => {
 </script>
 
 <style scoped>
-
 /* Form styling */
 
 form {
@@ -161,9 +160,16 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 768px) {
+
     form {
         border-radius: 0;
         box-shadow: none;
+        margin: 0 auto 3em;
+        padding: 0.5em 1.5em;
+    }
+
+    label:first-of-type {
+        margin-top: 0;
     }
 }
 </style>

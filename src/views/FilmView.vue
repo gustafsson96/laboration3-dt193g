@@ -1,7 +1,10 @@
 <template>
     <main>
         <h1>Filmsidan</h1>
-            <AddMovie @refresh-table="getMovies" />
+        <div class="image-container">
+            <img src="../assets/images/characters.webp" alt="animerade filmkaraktärer">
+        </div>
+        <AddMovie @refresh-table="getMovies" />
         <table>
             <thead>
                 <tr>
@@ -64,6 +67,13 @@ const deleteMovie = async (id) => {
 </script>
 
 <style scoped>
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 3em;
+}
+
 img {
     width: 60%;
     height: auto;
