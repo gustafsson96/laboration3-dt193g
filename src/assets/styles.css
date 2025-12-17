@@ -3,10 +3,18 @@
 body {
   padding: 0;
   margin: 0;
+  line-height: 1.6;
+  font-size: 1.1em;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 main {
   padding-bottom: 100px;
   min-height: 70vh;
   background-color: rgba(204, 230, 255, 0.7);
+}
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }

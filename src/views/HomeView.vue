@@ -59,13 +59,6 @@ img {
     margin: 3em auto;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    line-height: 1.6;
-    font-size: 1.1em;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}
-
-h2 {
-    text-align: center;
 }
 
 @media screen and (max-width: 1000px) {

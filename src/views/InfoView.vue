@@ -1,7 +1,6 @@
 <template>
     <main>
-        <h1>Infosidan!</h1>
-        <!-- Kort sammanfattning av mina tankar om vue.js. -->
+        <h1>Info</h1>
     </main>
 </template>
 
